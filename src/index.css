@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  @apply duration-300;
+}
+
+.box-center {
+  @apply flex items-center justify-center;
+}
+
+.box-between {
+  @apply flex items-center justify-between;
+}
+
+.box-equal {
+  @apply flex items-center;
+}
