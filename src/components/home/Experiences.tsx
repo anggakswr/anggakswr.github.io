@@ -15,8 +15,9 @@ const Experiences = () => {
         </p>
 
         <a
-          href="#"
+          href="/docs/cv-angga-ats.pdf"
           className="text-xs box-equal gap-x-2 bg-gray-100 py-2 px-4 rounded-xl"
+          download
         >
           <BiDownArrowAlt />
           Download CV
