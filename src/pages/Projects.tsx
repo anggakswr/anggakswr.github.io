@@ -13,15 +13,18 @@ const Projects = () => {
       <hr className="mb-4" />
 
       {/* projects */}
-      {aProjects.map((oProject) => (
-        <Project key={oProject.sName} oProject={oProject} />
-      ))}
+      <div className="-mx-4 md:-mx-0">
+        {aProjects.map((oProject) => (
+          <Project key={oProject.sName} oProject={oProject} />
+        ))}
+      </div>
     </div>
   );
 };
 
 const aProjects = [
   {
+    sBorder: "border-red-300",
     sName: "BPPT Teleconference",
     sLogo: "/img/projects/bppt2.png",
     sDesc:
@@ -29,10 +32,11 @@ const aProjects = [
     sDesc2:
       "Elevate your remote collaboration experience with BPPT Teleconference, where innovation meets efficiency in the world of virtual meetings.",
     sImg: "/img/projects/bppt.png",
-    sImgBg: "bg-red-500/10",
+    sImgBg: "bg-red-100",
     sLink: "https://meeting.bppt.go.id",
   },
   {
+    sBorder: "border-green-300",
     sName: "Reksadana Manulife",
     sLogo: "/img/projects/manulife2.png",
     sDesc:
@@ -40,10 +44,11 @@ const aProjects = [
     sDesc2:
       "Experience financial empowerment like never before with the Manulife Mutual Funds Platform—a testament to innovation and sophistication in the realm of online investment.",
     sImg: "/img/projects/manulife.jpg",
-    sImgBg: "bg-green-500/10",
+    sImgBg: "bg-green-100",
     sLink: "https://reksadana-manulife.com",
   },
   {
+    sBorder: "border-lime-300",
     sName: "Worxspace",
     sLogo: "/img/projects/worxspace2.png",
     sDesc:
@@ -51,10 +56,11 @@ const aProjects = [
     sDesc2:
       "WorxSpace is more than a tool; it's a catalyst for enhanced collaboration, efficient task management, and a thriving workplace culture. Elevate your team's experience with WorxSpace and witness the transformation of how work gets done.",
     sImg: "/img/projects/worxspace.png",
-    sImgBg: "bg-lime-500/10",
+    sImgBg: "bg-lime-100",
     sLink: "https://worxspace.id",
   },
   {
+    sBorder: "border-blue-300",
     sName: "Parenthood Institute",
     sLogo: "/img/experiences/prima-logo.png",
     sDesc:
@@ -62,9 +68,10 @@ const aProjects = [
     sDesc2:
       "From informative webinars to interactive quizzes, Parenthood Institute provides a holistic experience for parents, caregivers, and the community at large. Join us in creating a brighter future by embracing knowledge, fostering health, and celebrating the journey of parenthood with exciting incentives and enriching activities.",
     sImg: "/img/projects/parenthood.jpg",
-    sImgBg: "bg-blue-500/10",
+    sImgBg: "bg-blue-100",
   },
   {
+    sBorder: "border-blue-300",
     sName: "CDIC",
     sLogo: "/img/experiences/prima-logo.png",
     sDesc:
@@ -72,7 +79,7 @@ const aProjects = [
     sDesc2:
       "With CDIC, the journey of caring for your child's health becomes a collaborative effort, where medical expertise meets the insights of dedicated parents. Embrace a new era of childhood health management with CDIC, fostering a holistic and communicative approach to pediatric care.",
     sImg: "/img/projects/cdic.jpg",
-    sImgBg: "bg-blue-500/10",
+    sImgBg: "bg-blue-100",
   },
 ];
 
