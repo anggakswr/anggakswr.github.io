@@ -5,9 +5,9 @@ const Projects = () => {
     <div>
       <h1 className="text-3xl font-medium mb-4">Projects</h1>
 
-      <p className="leading-6 md:leading-7 mb-4 text-sm md:text-base">
-        Showcasing my passion for technology, building my own world through
-        code.
+      <p className="leading-6 md:leading-7 mb-4 text-sm md:text-base text-gray-600">
+        Unleashing my tech zeal, crafting a digital realm, and sculpting a
+        universe uniquely my own.
       </p>
 
       <hr className="mb-4" />
