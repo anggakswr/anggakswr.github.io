@@ -1,14 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Links } from "./Sidebar";
-// import { useHamburger } from "../store/hamburger";
+import { useLocation } from "react-router-dom";
 
 const MobileHeader = () => {
+  // local state
   const [bHamburger, setBHamburger] = useState(false);
-
-  // const { bOpened } = useHamburger((state) => state);
-  // const { vToggle } = useHamburger((state) => state);
-
   const sCSSLinks = bHamburger ? "top-[73px] bottom-0" : "-top-96";
+
+  // router
+  const location = useLocation();
+  const { pathname } = location;
+
+  useEffect(() => {
+    setBHamburger(false);
+  }, [pathname]);
 
   return (
     <>
@@ -36,13 +41,11 @@ const MobileHeader = () => {
         </button>
       </nav>
 
-      {/* {bHamburger ? ( */}
       <div
-        className={`md:hidden bg-white fixed z-10 inset-x-0 p-4 ${sCSSLinks}`}
+        className={`md:hidden bg-white fixed z-20 inset-x-0 p-4 ${sCSSLinks}`}
       >
         <Links />
       </div>
-      {/* ) : null} */}
     </>
   );
 };

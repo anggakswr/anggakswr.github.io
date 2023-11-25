@@ -36,7 +36,7 @@ const Content = () => {
 
       <h2 className="text-xl mb-4">Latest Writings</h2>
 
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
         {aWritings.map((oWriting) => (
           <Writing key={`devto-${oWriting.id}`} oWriting={oWriting} />
         ))}
@@ -49,13 +49,18 @@ const Writing = ({ oWriting }: { oWriting: IWriting }) => {
   return (
     <div className="rounded-xl">
       {/* img */}
-      <div className="mb-2">
+      <a
+        href={oWriting.url}
+        className="mb-2"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <img
           src={oWriting.social_image}
           alt={oWriting.title}
           className="rounded"
         />
-      </div>
+      </a>
 
       {/* texts */}
       <div>
