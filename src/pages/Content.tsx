@@ -1,8 +1,9 @@
 import axios from "axios";
-import dayjs from "dayjs";
 import { useQuery } from "react-query";
+import Writing from "../components/content/Writing";
+import CustomVideo, { IVideo } from "../components/content/CustomVideo";
 
-interface IWriting {
+export interface IWriting {
   id: number;
   title: string;
   url: string;
@@ -13,8 +14,6 @@ interface IWriting {
 }
 
 const Content = () => {
-  // https://dev.to/api/articles?username=codebayu
-
   const getWritings = () => {
     return axios.get("https://dev.to/api/articles?username=anggakswr");
   };
@@ -34,9 +33,19 @@ const Content = () => {
 
       <hr className="mb-4" />
 
+      <h2 className="text-xl mb-4">Latest Videos</h2>
+
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-4">
+        {aVideos.map((oVideo) => (
+          <CustomVideo key={`yt-${oVideo.sLink}`} oVideo={oVideo} />
+        ))}
+      </div>
+
+      <hr className="mb-4" />
+
       <h2 className="text-xl mb-4">Latest Writings</h2>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-4">
         {aWritings.map((oWriting) => (
           <Writing key={`devto-${oWriting.id}`} oWriting={oWriting} />
         ))}
@@ -45,40 +54,21 @@ const Content = () => {
   );
 };
 
-const Writing = ({ oWriting }: { oWriting: IWriting }) => {
-  return (
-    <div className="rounded-xl">
-      {/* img */}
-      <a
-        href={oWriting.url}
-        className="mb-2"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img
-          src={oWriting.social_image}
-          alt={oWriting.title}
-          className="rounded"
-        />
-      </a>
-
-      {/* texts */}
-      <div>
-        <a
-          href={oWriting.url}
-          className="text-sm block mb-1"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {oWriting.title}
-        </a>
-
-        <p className="text-xs text-gray-500">
-          {dayjs(oWriting.published_at).format("MMM D, YYYY")}
-        </p>
-      </div>
-    </div>
-  );
-};
+const aVideos: IVideo[] = [
+  {
+    sTitle: "Micro-frontends",
+    sDesc: "Modern concept of frontends",
+    sImg: "/img/yt-vids/microfe.jpg",
+    sLink:
+      "https://www.youtube.com/playlist?list=PLtj3PG7JyoVvNEf9gGvPRT_CAgqYYa4Yy",
+  },
+  {
+    sTitle: "TDD",
+    sDesc: "Test Driven Development",
+    sImg: "/img/yt-vids/tdd.jpg",
+    sLink:
+      "https://www.youtube.com/playlist?list=PLtj3PG7JyoVvm3PlTr_MHym8-18BUQcCG",
+  },
+];
 
 export default Content;

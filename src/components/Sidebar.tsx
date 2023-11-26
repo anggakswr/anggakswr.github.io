@@ -2,7 +2,6 @@ import { Link, useLocation } from "react-router-dom";
 
 import {
   BiBookmarks,
-  // BiBriefcaseAlt,
   BiCategory,
   BiHomeAlt2,
   BiPaperPlane,
@@ -10,7 +9,6 @@ import {
 
 const aLinks = [
   { sLink: "/", sTitle: "Home", rnIcon: <BiHomeAlt2 /> },
-  // { sLink: "/experiences", sTitle: "Experiences", rnIcon: <BiBriefcaseAlt /> },
   { sLink: "/projects", sTitle: "Projects", rnIcon: <BiBookmarks /> },
   { sLink: "/content", sTitle: "Content", rnIcon: <BiCategory /> },
   { sLink: "/contact", sTitle: "Contact", rnIcon: <BiPaperPlane /> },
@@ -58,7 +56,7 @@ export const Links = () => {
   };
 
   return (
-    <div className="py-2 flex flex-col gap-2 md:gap-0">
+    <div className="py-2 flex flex-col gap-2">
       {aLinks.map((oLink) => (
         <Link
           key={oLink.sLink}
