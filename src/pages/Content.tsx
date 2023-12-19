@@ -2,6 +2,7 @@ import axios from "axios";
 import { useQuery } from "react-query";
 import Writing from "../components/content/Writing";
 import CustomVideo, { IVideo } from "../components/content/CustomVideo";
+import WritingSkeleton from "../components/content/WritingSkeleton";
 
 export interface IWriting {
   id: number;
@@ -18,7 +19,7 @@ const Content = () => {
     return axios.get("https://dev.to/api/articles?username=anggakswr");
   };
 
-  const { data } = useQuery("writings", getWritings);
+  const { data, isLoading } = useQuery("writings", getWritings);
   const aWritings = (data?.data as IWriting[]) ?? [];
 
   return (
@@ -45,11 +46,21 @@ const Content = () => {
 
       <h2 className="text-xl mb-4">Latest Writings</h2>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-4">
-        {aWritings.map((oWriting) => (
-          <Writing key={`devto-${oWriting.id}`} oWriting={oWriting} />
-        ))}
-      </div>
+      {isLoading ? (
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-4">
+          <WritingSkeleton />
+          <WritingSkeleton />
+          <WritingSkeleton />
+          <WritingSkeleton />
+          <WritingSkeleton />
+        </div>
+      ) : (
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-4">
+          {aWritings.map((oWriting) => (
+            <Writing key={`devto-${oWriting.id}`} oWriting={oWriting} />
+          ))}
+        </div>
+      )}
     </div>
   );
 };
