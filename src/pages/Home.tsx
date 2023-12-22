@@ -4,7 +4,7 @@ const Home = () => {
   return (
     <div className="bg-black min-h-screen box-center flex-col gap-8">
       {aMenus.map((sMenu, nIndex) => (
-        <Menu sText={sMenu} bOdd={!(nIndex % 2)} />
+        <Menu sText={sMenu} bOdd={!(nIndex % 2)} nIndex={nIndex} />
       ))}
     </div>
   );
@@ -12,7 +12,15 @@ const Home = () => {
 
 const aMenus = ["HOME", "PROJECTS", "CONTENT", "CONTACT"];
 
-const Menu = ({ sText, bOdd }: { sText: string; bOdd?: boolean }) => {
+const Menu = ({
+  sText,
+  bOdd,
+  nIndex,
+}: {
+  sText: string;
+  bOdd?: boolean;
+  nIndex: number;
+}) => {
   const [bHover, setBHover] = useState(false);
 
   const sBoxCSS = "absolute top-0 left-0 w-full h-full";
@@ -21,7 +29,9 @@ const Menu = ({ sText, bOdd }: { sText: string; bOdd?: boolean }) => {
   const sBox2CSS = "bg-red-700 skew-x-12 hover:";
   const sBox2Anim = bHover ? "rotate-12" : "";
 
+  const sTextCSS = "relative z-20 drop-shadow-md text-xl flex";
   const sTextAnim = bHover ? "" : "text-white";
+  const sRotate = bHover && bOdd ? "rotate-6" : "-rotate-6";
 
   return (
     <div
@@ -29,9 +39,19 @@ const Menu = ({ sText, bOdd }: { sText: string; bOdd?: boolean }) => {
       onMouseOver={() => setBHover(true)}
       onMouseOut={() => setBHover(false)}
     >
-      <p className={`relative z-20 drop-shadow-md text-xl ${sTextAnim}`}>
-        {sText}
-      </p>
+      <div className={`${sTextCSS} ${sTextAnim}`}>
+        {/* {sText} */}
+        {sText.split("").map((sLetter, nIndex2) => (
+          <div
+            key={`letter-${sLetter}`}
+            className={
+              nIndex2 === nIndex + 1 ? `bg-red-700 ${sRotate} text-white` : ""
+            }
+          >
+            {sLetter}
+          </div>
+        ))}
+      </div>
 
       <div className={`absolute inset-0 ${bOdd ? "rotate-180" : ""}`}>
         {/* box */}
