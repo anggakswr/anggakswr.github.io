@@ -2,7 +2,7 @@ import SidebarV2 from "../components/v2/Sidebar";
 
 const Home = () => {
   return (
-    <div className="bg-black min-h-screen">
+    <div className="bg-black min-h-screen box-center">
       <div className="w-3/4 mx-auto py-8 flex gap-x-8">
         <SidebarV2 />
 

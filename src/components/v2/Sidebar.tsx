@@ -25,13 +25,13 @@ const Menu = ({
 
   const sBoxCSS = "absolute top-0 left-0 w-full h-full";
   const sBox1CSS = "z-10";
-  const sBox1Anim = bHover ? "rotate-0 bg-white" : "rotate-12 bg-red-400";
+  const sBox1Anim = !bHover ? "rotate-0 bg-white" : "rotate-12 bg-red-400";
   const sBox2CSS = "bg-red-700 skew-x-12 hover:";
-  const sBox2Anim = bHover ? "rotate-12" : "";
+  const sBox2Anim = !bHover ? "rotate-12" : "";
 
   const sTextCSS = "relative z-20 drop-shadow-md text-xl flex";
-  const sTextAnim = bHover ? "" : "text-white";
-  const sRotate = bHover && bOdd ? "rotate-6" : "-rotate-6";
+  const sTextAnim = !bHover ? "" : "text-white";
+  const sRotate = !bHover && bOdd ? "rotate-6" : "-rotate-6";
 
   return (
     <div
