@@ -2,8 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "p5hatty";
+  src: url("/fonts/p5hatty-1.ttf");
+}
+
 * {
   @apply duration-300;
+  font-family: "p5hatty", "Georgia", serif;
 }
 
 .box-center {
