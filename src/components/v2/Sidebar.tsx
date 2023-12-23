@@ -25,7 +25,9 @@ const Menu = ({
 
   const sBoxCSS = "absolute top-0 left-0 w-full h-full";
   const sBox1CSS = "z-10";
-  const sBox1Anim = !bHover ? "-rotate-12 bg-white" : "rotate-12 bg-red-400";
+  const sBox1Anim = !bHover
+    ? "-rotate-12 bg-white"
+    : "rotate-12 bg-black border-2 border-white";
   const sBox2CSS = `bg-red-700 ${bOdd ? "skew-x-12" : ""}`;
   const sBox2Anim = !bHover ? "rotate-12" : "";
 
@@ -40,7 +42,6 @@ const Menu = ({
       onMouseOut={() => setBHover(false)}
     >
       <div className={`${sTextCSS} ${sTextAnim}`}>
-        {/* {sText} */}
         {sText.split("").map((sLetter, nIndex2) => (
           <div
             key={`letter-${sLetter}`}
