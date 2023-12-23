@@ -23,7 +23,7 @@ const Menu = ({
 }) => {
   const [bHover, setBHover] = useState(false);
 
-  const sBoxCSS = "absolute top-0 left-0 w-full h-full";
+  const sBoxCSS = "absolute top-0 left-0 w-full h-full cursor-pointer";
   const sBox1CSS = "z-10";
   const sBox1Anim = !bHover
     ? "-rotate-12 bg-white"
@@ -33,7 +33,9 @@ const Menu = ({
 
   const sTextCSS = "relative z-20 drop-shadow-md text-xl flex";
   const sTextAnim = !bHover ? "" : "text-white";
-  const sRotate = !bHover && bOdd ? "rotate-6" : "-rotate-6";
+  const sRotateCSS = !bHover && bOdd ? "rotate-6" : "-rotate-6";
+  const sLetterCSS = (nIndex2: number) =>
+    nIndex2 === nIndex + 1 ? `bg-red-700 ${sRotateCSS} text-white` : "";
 
   return (
     <div
@@ -43,12 +45,7 @@ const Menu = ({
     >
       <div className={`${sTextCSS} ${sTextAnim}`}>
         {sText.split("").map((sLetter, nIndex2) => (
-          <div
-            key={`letter-${sLetter}`}
-            className={
-              nIndex2 === nIndex + 1 ? `bg-red-700 ${sRotate} text-white` : ""
-            }
-          >
+          <div key={`letter-${sLetter}`} className={sLetterCSS(nIndex2)}>
             {sLetter}
           </div>
         ))}
