@@ -11,7 +11,8 @@ const CircleAnimation = () => {
 
   const nMaxWidth = 1300;
   let nCircles = 1;
-  let nWidth = 160;
+  const nInitWidth = 160;
+  let nWidth = nInitWidth;
 
   while (nWidth < nMaxWidth) {
     nCircles += 1;
@@ -20,16 +21,27 @@ const CircleAnimation = () => {
 
   console.log({ nCircles });
 
+  const aCircles = [...Array(nCircles).keys()];
+
+  const sCircleCSS = "rounded-full absolute inset-x-0 mx-auto";
+  const sColor = (nNumber: number) => (nNumber % 2 ? "bg-black" : "bg-red-700");
+  const nSize = (nNumber: number) => nInitWidth + nNumber * nInitWidth;
+  const nBottom = (nNumber: number) => (nNumber + 1) * 32;
+
   return (
     <div className="absolute inset-x-0 bottom-0 -top-8 bg-red-700 -rotate-3 overflow-hidden">
-      {/* black circle */}
-      <div className="bg-black w-40 h-40 rounded-full absolute inset-x-0 mx-auto -bottom-16 z-20"></div>
-
-      {/* red circle */}
-      <div className="bg-red-700 w-60 h-60 rounded-full absolute inset-x-0 mx-auto -bottom-24 z-10"></div>
-
-      {/* black circle */}
-      <div className="bg-black w-80 h-80 rounded-full absolute inset-x-0 mx-auto -bottom-32"></div>
+      {aCircles.map((nNumber) => (
+        <div
+          key={`circle-${nNumber}`}
+          className={`${sCircleCSS} ${sColor(nNumber)}`}
+          style={{
+            width: nSize(nNumber),
+            height: nSize(nNumber),
+            bottom: -nBottom(nNumber),
+            zIndex: 999 - nNumber,
+          }}
+        />
+      ))}
     </div>
   );
 };
