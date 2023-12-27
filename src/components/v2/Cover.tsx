@@ -1,5 +1,6 @@
 import Btn from "./cover/Btn";
 import CircleAnimation from "./cover/CircleAnimation";
+import Separator from "./cover/Separator";
 import Footer from "./cover/Footer";
 
 const Cover = () => {
@@ -8,6 +9,9 @@ const Cover = () => {
       {/* red & black circles */}
       <div className="h-1/3 relative">
         <CircleAnimation />
+
+        {/* white boxes */}
+        <Separator />
       </div>
 
       {/* body */}

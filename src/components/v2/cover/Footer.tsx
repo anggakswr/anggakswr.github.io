@@ -18,7 +18,7 @@ const Footer = () => {
       {aWords.map((sWord) => (
         <div key={sWord} className="relative z-10 text-white flex">
           {sWord.split("").map((sLetter, nIndex) => (
-            <div key={`footer-letter-${sLetter}`} className="relative">
+            <div key={`footer-letter-${nIndex}`} className="relative">
               <span className="relative z-20">{sLetter}</span>
 
               {/* black bg */}

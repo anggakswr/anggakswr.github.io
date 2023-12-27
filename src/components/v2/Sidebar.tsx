@@ -4,7 +4,12 @@ const SidebarV2 = () => {
   return (
     <div className="flex flex-col gap-8">
       {aMenus.map((sMenu, nIndex) => (
-        <Menu sText={sMenu} bOdd={!(nIndex % 2)} nIndex={nIndex} />
+        <Menu
+          key={`menu-${nIndex}`}
+          sText={sMenu}
+          bOdd={!(nIndex % 2)}
+          nIndex={nIndex}
+        />
       ))}
     </div>
   );
@@ -45,7 +50,10 @@ const Menu = ({
     >
       <div className={`${sTextCSS} ${sTextAnim}`}>
         {sText.split("").map((sLetter, nIndex2) => (
-          <div key={`letter-${sLetter}`} className={sLetterCSS(nIndex2)}>
+          <div
+            key={`letter-${sLetter}-${nIndex2}`}
+            className={sLetterCSS(nIndex2)}
+          >
             {sLetter}
           </div>
         ))}
