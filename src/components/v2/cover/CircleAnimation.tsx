@@ -1,4 +1,25 @@
+// import { useEffect, useState } from "react";
+
 const CircleAnimation = () => {
+  // const [aCircles, setACircles] = useState([])
+
+  // useEffect(() => {
+  // const nMaxWidth = window.innerWidth
+  // const aCircles = []
+
+  // }, [])
+
+  const nMaxWidth = 1300;
+  let nCircles = 1;
+  let nWidth = 160;
+
+  while (nWidth < nMaxWidth) {
+    nCircles += 1;
+    nWidth += 80;
+  }
+
+  console.log({ nCircles });
+
   return (
     <div className="absolute inset-x-0 bottom-0 -top-8 bg-red-700 -rotate-3 overflow-hidden">
       {/* black circle */}
