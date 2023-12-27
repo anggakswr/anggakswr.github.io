@@ -1,7 +1,6 @@
 const sFooterText = "2023 ALL RIGHT RESERVED. KAMISWARA ANGGA W.";
 const aWords = sFooterText.split(" ");
 
-const sFooterTextBg = "";
 const sFooterTextCSS = (nIndex: number) => {
   const bEven = nIndex % 2;
   const sCSS1 = `bg-black w-[200%] ${bEven ? "h-[80%]" : "h-[70%]"}`;
@@ -20,11 +19,11 @@ const Footer = () => {
         <div key={sWord} className="relative z-10 text-white flex">
           {sWord.split("").map((sLetter, nIndex) => (
             <div key={`footer-letter-${sLetter}`} className="relative">
-              <span className="relative z-10">{sLetter}</span>
+              <span className="relative z-20">{sLetter}</span>
 
               {/* black bg */}
               <div className="absolute inset-0 box-center w-[200%]">
-                <div className={`${sFooterTextBg} ${sFooterTextCSS(nIndex)}`} />
+                <div className={`${sFooterTextCSS(nIndex)} z-10`} />
               </div>
             </div>
           ))}
@@ -32,7 +31,8 @@ const Footer = () => {
       ))}
 
       {/* red rotated bg */}
-      <div className="absolute inset-x-0 -bottom-[70%] w-[200%] h-[200%] -rotate-3 bg-red-700" />
+      {/* <div className="absolute inset-x-0 -bottom-[70%] w-[200%] h-[200%] -rotate-3 bg-red-700" /> */}
+      <div className="absolute inset-x-0 w-full h-full rotate-3 bg-red-700" />
     </div>
   );
 };
