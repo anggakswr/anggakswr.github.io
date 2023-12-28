@@ -1,14 +1,4 @@
-// import { useEffect, useState } from "react";
-
 const CircleAnimation = () => {
-  // const [aCircles, setACircles] = useState([])
-
-  // useEffect(() => {
-  // const nMaxWidth = window.innerWidth
-  // const aCircles = []
-
-  // }, [])
-
   const nMaxWidth = 1300;
   let nCircles = 1;
   const nInitWidth = 160;
@@ -19,10 +9,7 @@ const CircleAnimation = () => {
     nWidth += 80;
   }
 
-  console.log({ nCircles });
-
   const aCircles = [...Array(nCircles).keys()];
-
   const sCircleCSS = "rounded-full absolute inset-x-0 mx-auto";
   const sColor = (nNumber: number) => (nNumber % 2 ? "bg-black" : "bg-red-700");
   const nSize = (nNumber: number) => nInitWidth + nNumber * nInitWidth;

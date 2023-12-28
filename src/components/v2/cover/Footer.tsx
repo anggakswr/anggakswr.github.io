@@ -1,14 +1,3 @@
-const sFooterText = "2023 ALL RIGHT RESERVED. KAMISWARA ANGGA W.";
-const aWords = sFooterText.split(" ");
-
-const sFooterTextCSS = (nIndex: number) => {
-  const bEven = nIndex % 2;
-  const sCSS1 = `bg-black w-[200%] ${bEven ? "h-[80%]" : "h-[70%]"}`;
-  const sCSS2 = bEven ? "rotate-12" : "-rotate-12";
-
-  return `${sCSS1} ${sCSS2}`;
-};
-
 const Footer = () => {
   return (
     <div className="relative h-1/6 box-center gap-1.5">
@@ -23,7 +12,7 @@ const Footer = () => {
 
               {/* black bg */}
               <div className="absolute inset-0 box-center w-[200%]">
-                <div className={`${sFooterTextCSS(nIndex)} z-10`} />
+                <div className={`${sTextBg(nIndex)} z-10`} />
               </div>
             </div>
           ))}
@@ -31,10 +20,20 @@ const Footer = () => {
       ))}
 
       {/* red rotated bg */}
-      {/* <div className="absolute inset-x-0 -bottom-[70%] w-[200%] h-[200%] -rotate-3 bg-red-700" /> */}
       <div className="absolute inset-x-0 w-full h-full rotate-3 bg-red-700" />
     </div>
   );
+};
+
+const sFooterText = "2023 ALL RIGHT RESERVED. KAMISWARA ANGGA W.";
+const aWords = sFooterText.split(" ");
+
+const sTextBg = (nIndex: number) => {
+  const bEven = nIndex % 2;
+  const sCSS1 = `bg-black w-[200%] ${bEven ? "h-[80%]" : "h-[70%]"}`;
+  const sCSS2 = bEven ? "rotate-12" : "-rotate-12";
+
+  return `${sCSS1} ${sCSS2}`;
 };
 
 export default Footer;
