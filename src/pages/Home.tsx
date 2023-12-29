@@ -6,12 +6,12 @@ const Home = () => {
     <div className="bg-black min-h-screen box-center">
       <Cover />
 
-      {/* <div className="w-3/4 mx-auto py-8 flex gap-x-8"> */}
-      <SidebarV2 />
+      <div className="w-3/4 mx-auto py-8 flex gap-x-8">
+        <SidebarV2 />
 
-      {/* body */}
-      {/* <div className="w-full bg-red-500 text-white">asd</div> */}
-      {/* </div> */}
+        {/* body */}
+        <div className="w-full bg-red-500 text-white">asd</div>
+      </div>
     </div>
   );
 };

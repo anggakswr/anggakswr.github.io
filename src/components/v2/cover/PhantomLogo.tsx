@@ -32,7 +32,7 @@ const PhantomLogo = () => {
 };
 
 const sDefaultTextBg = "z-10 border-y-2 border-white p-3";
-const sFooterText = "Portfolio - Site";
+const sFooterText = "Portfolio Site";
 const aWords = sFooterText.split(" ");
 
 const sTextBg = (nIndex: number) => {

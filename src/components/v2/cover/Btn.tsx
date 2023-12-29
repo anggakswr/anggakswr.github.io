@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { useCover } from "../../../store/cover";
+import { useTransition } from "../../../store/transition";
 
 const Btn = () => {
   // global state
   const { vOpen } = useCover((state) => state);
+  const { vToggle } = useTransition((state) => state);
 
   // local state
   const [bHover, setBHover] = useState(false);
@@ -20,7 +22,10 @@ const Btn = () => {
       className="relative w-[100px] h-[50px] box-center cursor-pointer"
       onMouseOver={() => setBHover(true)}
       onMouseOut={() => setBHover(false)}
-      onClick={vOpen}
+      onClick={() => {
+        vOpen();
+        vToggle();
+      }}
     >
       <div className={`relative z-20 text-2xl ${sTextAnim}`}>Open</div>
 
