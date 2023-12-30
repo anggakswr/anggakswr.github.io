@@ -4,11 +4,11 @@ import Skills from "../components/home/Skills";
 
 const Home = () => {
   return (
-    <div className="w-full text-white">
+    <>
       <Bio />
       <Experiences />
       <Skills />
-    </div>
+    </>
   );
 };
 
