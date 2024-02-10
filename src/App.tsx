@@ -4,7 +4,7 @@ import sUpperChar1 from "./helpers/sUpperChar1";
 import { QueryClient, QueryClientProvider } from "react-query";
 import BoxTransition from "./components/v2/BoxTransition";
 import { useTransition } from "./store/transition";
-import Cover from "./components/v2/Cover";
+// import Cover from "./components/v2/Cover";
 import SidebarV2 from "./components/v2/Sidebar";
 
 const queryClient = new QueryClient();
@@ -32,14 +32,14 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <div className="bg-black min-h-screen">
-        <Cover />
+        {/* <Cover /> */}
         <BoxTransition />
 
         <div className="w-3/4 mx-auto py-8 flex gap-x-8">
           <SidebarV2 />
 
           {/* body */}
-          <div className="w-full text-white">
+          <div className="md:pl-64 w-full text-white">
             <Outlet />
           </div>
         </div>

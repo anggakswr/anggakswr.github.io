@@ -5,7 +5,7 @@ const Projects = () => {
     <div>
       <h1 className="text-3xl font-medium mb-4">Projects</h1>
 
-      <p className="leading-6 md:leading-7 mb-4 text-sm md:text-base text-gray-600">
+      <p className="leading-6 md:leading-7 mb-4 text-lg md:text-xl">
         Unleashing my tech zeal, crafting a digital realm, and sculpting a
         universe uniquely my own.
       </p>

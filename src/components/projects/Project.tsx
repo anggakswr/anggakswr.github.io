@@ -17,7 +17,7 @@ const Project = ({ oProject }: { oProject: IProject }) => {
 
   return (
     <div
-      className={`relative overflow-hidden border ${sBorder} md:rounded-xl p-4 mb-4`}
+      className={`relative overflow-hidden border ${sBorder} md:rounded-xl p-4 mb-4 bg-white`}
     >
       {/* decoration */}
       <div className="absolute inset-0 pattern1" />
@@ -30,16 +30,16 @@ const Project = ({ oProject }: { oProject: IProject }) => {
             <img src={sLogo} alt={sName} />
           </div>
 
-          <h2 className="text-xl">{sName}</h2>
+          <h2 className="text-xl text-black">{sName}</h2>
         </div>
 
-        <p className="text-sm md:text-base mb-4">{sDesc}</p>
+        <p className="text-black text-lg md:text-xl mb-4">{sDesc}</p>
 
         <div className={`rounded-xl p-2 md:p-8 mb-4 ${sImgBg}`}>
           <img src={sImg} alt={sName} className="rounded-xl relative z-10" />
         </div>
 
-        <p className="text-sm md:text-base mb-4">{sDesc2}</p>
+        <p className="text-black text-lg md:text-xl mb-4">{sDesc2}</p>
 
         {sLink ? (
           <div className="md:w-1/2">

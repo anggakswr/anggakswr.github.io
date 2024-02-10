@@ -3,7 +3,7 @@ import Menu from "./sidebar/Menu";
 
 const SidebarV2 = () => {
   return (
-    <div className="box-equal flex-col gap-8 w-56">
+    <div className="fixed hidden md:flex items-center flex-col gap-8 w-56">
       {/* red box (with mementos circles) */}
       <div className="relative w-full h-20 bg-red-700 -rotate-3 overflow-hidden">
         <MementosCircle nMaxWidth={224} nInitWidth={60} />
@@ -23,18 +23,24 @@ const SidebarV2 = () => {
         <p className="text-red-700 -mt-2">@anggakswr</p>
       </div>
 
-      {aMenus.map((sMenu, nIndex) => (
+      {aMenus.map((menu, nIndex) => (
         <Menu
           key={`menu-${nIndex}`}
-          sText={sMenu}
+          sText={menu.text}
           bOdd={!(nIndex % 2)}
           nIndex={nIndex}
+          link={menu.link}
         />
       ))}
     </div>
   );
 };
 
-const aMenus = ["HOME", "PROJECTS", "CONTENT", "CONTACT"];
+const aMenus = [
+  { link: "/", text: "HOME" },
+  { link: "/projects", text: "PROJECTS" },
+  { link: "/content", text: "CONTENT" },
+  { link: "/contact", text: "CONTACT" },
+];
 
 export default SidebarV2;

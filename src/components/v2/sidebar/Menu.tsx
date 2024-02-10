@@ -1,29 +1,32 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Menu = ({
   sText,
   bOdd,
   nIndex,
+  link,
 }: {
   sText: string;
   bOdd?: boolean;
   nIndex: number;
+  link: string;
 }) => {
+  // router
+  const navigate = useNavigate();
+
+  // local state
   const [bHover, setBHover] = useState(false);
 
   const sBoxCSS = "absolute top-0 left-0 w-full h-full";
-
   const sBox1CSS = "z-10";
   const sBox1Anim = !bHover
-    ? "-rotate-12 bg-white"
-    : "rotate-12 bg-black border-2 border-white";
-
-  const sBox2CSS = `bg-red-700 ${bOdd ? "skew-x-12" : ""}`;
-  const sBox2Anim = !bHover ? "rotate-12" : "";
-
+    ? "-rotate-3 bg-white"
+    : "rotate-3 bg-black border-2 border-white";
+  const sBox2CSS = `bg-red-700 ${bOdd ? "skew-x-3" : ""}`;
+  const sBox2Anim = !bHover ? "rotate-3" : "";
   const sTextCSS = "relative z-20 drop-shadow-md text-xl flex";
   const sTextAnim = !bHover ? "" : "text-white";
-
   const sRotateCSS = !bHover && bOdd ? "rotate-6" : "-rotate-6";
 
   const sLetterCSS = (nIndex2: number) =>
@@ -31,6 +34,7 @@ const Menu = ({
 
   return (
     <div
+      onClick={() => navigate(link)}
       className="relative w-[80px] h-[40px] box-center cursor-pointer"
       onMouseOver={() => setBHover(true)}
       onMouseOut={() => setBHover(false)}
