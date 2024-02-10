@@ -11,7 +11,7 @@ const CustomVideo = ({ oVideo }: { oVideo: IVideo }) => {
       {/* img */}
       <a
         href={oVideo.sLink}
-        className="mb-2"
+        className="mb-2 hover:opacity-80"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -22,14 +22,14 @@ const CustomVideo = ({ oVideo }: { oVideo: IVideo }) => {
       <div>
         <a
           href={oVideo.sLink}
-          className="text-sm block mb-1"
+          className="text-lg leading-4 block mb-1"
           target="_blank"
           rel="noopener noreferrer"
         >
           {oVideo.sTitle}
         </a>
 
-        <p className="text-xs text-gray-500">{oVideo.sDesc}</p>
+        <p className="text-red-700">{oVideo.sDesc}</p>
       </div>
     </div>
   );

@@ -8,10 +8,10 @@ import {
 
 const Contact = () => {
   return (
-    <div>
+    <div className="min-h-screen">
       <h1 className="text-3xl font-medium mb-4">Contact</h1>
 
-      <p className="leading-6 md:leading-7 mb-4 text-sm md:text-base text-gray-600">
+      <p className="leading-6 md:leading-7 mb-4 text-lg md:text-xl">
         Sometimes I take on side projects for website development, working as a
         freelance frontend developer. I'm also proficient in backend using
         Node.js and MongoDB. Occasionally, I conduct webinars, create some
@@ -30,7 +30,9 @@ const Contact = () => {
           href={oSocial.sLink}
           target="_blank"
           rel="noopener noreferrer"
-          className={`inline-block py-2 px-4 shadow mr-4 mb-4 rounded-full text-white ${oSocial.sCSSColor}`}
+          className={`hover:opacity-80 inline-block py-2 px-4 shadow mr-4 mb-4 rounded-full text-white ${
+            oSocial.sCSSColor
+          } ${oSocial.sCSSColor === "bg-black" ? "border" : ""}`}
         >
           <span className="box-equal gap-x-2">
             <span className="text-xl">{oSocial.sImg}</span>
@@ -60,7 +62,7 @@ const aSocials = [
     sImg: <TbBrandInstagram />,
     sText: "Instagram",
     sLink: "https://www.instagram.com/anggakswr/",
-    sCSSColor: "bg-purple-500",
+    sCSSColor: "bg-[#8134AF]",
   },
   {
     sImg: <TbBrandYoutube />,

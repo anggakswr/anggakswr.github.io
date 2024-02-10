@@ -26,7 +26,7 @@ const Content = () => {
     <div>
       <h1 className="text-3xl font-medium mb-4">Content</h1>
 
-      <p className="leading-6 md:leading-7 mb-4 text-sm md:text-base text-gray-600">
+      <p className="leading-6 md:leading-7 mb-4 text-lg md:text-xl">
         Embarking on a journey through the realms of technology, unraveling the
         secrets of code documentation, and embracing the art of perpetual
         creation.

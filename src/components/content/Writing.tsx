@@ -7,7 +7,7 @@ const Writing = ({ oWriting }: { oWriting: IWriting }) => {
       {/* img */}
       <a
         href={oWriting.url}
-        className="mb-2"
+        className="block mb-2 hover:opacity-80"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -22,14 +22,14 @@ const Writing = ({ oWriting }: { oWriting: IWriting }) => {
       <div>
         <a
           href={oWriting.url}
-          className="text-sm block mb-1"
+          className="text-lg leading-4 block mb-1"
           target="_blank"
           rel="noopener noreferrer"
         >
           {oWriting.title}
         </a>
 
-        <p className="text-xs text-gray-500">
+        <p className="text-red-700">
           {dayjs(oWriting.published_at).format("MMM D, YYYY")}
         </p>
       </div>
