@@ -6,6 +6,7 @@ import BoxTransition from "./components/v2/BoxTransition";
 import { useTransition } from "./store/transition";
 // import Cover from "./components/v2/Cover";
 import SidebarV2 from "./components/v2/Sidebar";
+import MobileHeader from "./components/v2/MobileHeader";
 
 const queryClient = new QueryClient();
 
@@ -34,8 +35,9 @@ function App() {
       <div className="bg-black min-h-screen">
         {/* <Cover /> */}
         <BoxTransition />
+        <MobileHeader />
 
-        <div className="md:w-3/4 px-4 md:px-0 mx-auto py-8 flex gap-x-8">
+        <div className="md:w-3/4 px-4 md:px-0 mx-auto pt-20 md:pt-8 pb-8 flex gap-x-8">
           <SidebarV2 />
 
           {/* body */}

@@ -1,33 +1,36 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
-const Menu = ({
-  sText,
-  bOdd,
-  nIndex,
-  link,
-}: {
+interface IMenuProp {
   sText: string;
   bOdd?: boolean;
   nIndex: number;
   link: string;
-}) => {
+}
+
+const Menu = ({ sText, bOdd, nIndex, link }: IMenuProp) => {
   // router
   const navigate = useNavigate();
+  const location = useLocation();
+  const { pathname } = location;
 
   // local state
   const [bHover, setBHover] = useState(false);
 
+  // booleans
+  const boxActive = pathname === link;
+  const isHover = bHover || boxActive;
+
+  // css classes
+  const activeCSS = "rotate-3 !bg-black !text-white border-2 border-white";
   const sBoxCSS = "absolute top-0 left-0 w-full h-full";
   const sBox1CSS = "z-10";
-  const sBox1Anim = !bHover
-    ? "-rotate-3 bg-white"
-    : "rotate-3 bg-black border-2 border-white";
+  const sBox1Anim = isHover ? "-rotate-3 bg-white" : activeCSS;
   const sBox2CSS = `bg-red-700 ${bOdd ? "skew-x-3" : ""}`;
-  const sBox2Anim = !bHover ? "rotate-3" : "";
+  const sBox2Anim = isHover ? "rotate-3" : "";
   const sTextCSS = "relative z-20 drop-shadow-md text-xl flex";
-  const sTextAnim = !bHover ? "" : "text-white";
-  const sRotateCSS = !bHover && bOdd ? "rotate-6" : "-rotate-6";
+  const sTextAnim = isHover ? "" : "text-white";
+  const sRotateCSS = isHover && bOdd ? "rotate-6" : "-rotate-6";
 
   const sLetterCSS = (nIndex2: number) =>
     nIndex2 === nIndex + 1 ? `bg-red-700 ${sRotateCSS} text-white` : "";

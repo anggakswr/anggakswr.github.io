@@ -5,6 +5,8 @@ import {
   TbBrandLinkedin,
   TbBrandTiktok,
   TbBrandYoutube,
+  TbDeviceLaptop,
+  TbKeyboard,
 } from "react-icons/tb";
 
 const Contact = () => {
@@ -28,9 +30,32 @@ const Contact = () => {
       {aSocials.map((socmed) => (
         <SocmedLink key={socmed.text} socmed={socmed} />
       ))}
+
+      <hr className="my-4" />
+
+      <h2 className="text-xl mb-4">My coding gears</h2>
+
+      {gears.map((socmed) => (
+        <SocmedLink key={socmed.text} socmed={socmed} />
+      ))}
     </div>
   );
 };
+
+const gears = [
+  {
+    img: <TbDeviceLaptop />,
+    text: "Laptop",
+    link: "https://shope.ee/7f8iZwQreF",
+    bgColor: "bg-black",
+  },
+  {
+    img: <TbKeyboard />,
+    text: "Keyboard",
+    link: "https://github.com/anggakswr/",
+    bgColor: "bg-black",
+  },
+];
 
 interface Socmed {
   img: JSX.Element;

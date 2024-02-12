@@ -1,3 +1,4 @@
+import aMenus from "../../helpers/menus";
 import MementosCircle from "./cover/circle-animation/MementosCircle";
 import Menu from "./sidebar/Menu";
 
@@ -35,12 +36,5 @@ const SidebarV2 = () => {
     </div>
   );
 };
-
-const aMenus = [
-  { link: "/", text: "HOME" },
-  { link: "/projects", text: "PROJECTS" },
-  { link: "/content", text: "CONTENT" },
-  { link: "/contact", text: "CONTACT" },
-];
 
 export default SidebarV2;
