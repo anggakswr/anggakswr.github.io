@@ -12,12 +12,20 @@
   font-family: "p5hatty", "Georgia", serif;
 }
 
+img {
+  @apply bg-gray-500;
+}
+
 .box-center {
   @apply flex items-center justify-center;
 }
 
 .box-between {
   @apply flex items-center justify-between;
+}
+
+.box-end {
+  @apply flex items-end justify-end;
 }
 
 .box-equal {

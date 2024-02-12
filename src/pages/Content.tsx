@@ -1,8 +1,9 @@
 import axios from "axios";
 import { useQuery } from "react-query";
-import Writing from "../components/content/Writing";
+// import Writing from "../components/content/Writing";
 import CustomVideo, { IVideo } from "../components/content/CustomVideo";
 import WritingSkeleton from "../components/content/WritingSkeleton";
+import dayjs from "dayjs";
 
 export interface IWriting {
   id: number;
@@ -11,6 +12,7 @@ export interface IWriting {
   description: string;
   published_at: string;
   positive_reactions_count: number;
+  cover_image: string;
   social_image: string;
 }
 
@@ -56,9 +58,20 @@ const Content = () => {
         </div>
       ) : (
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-4">
-          {aWritings.map((oWriting) => (
-            <Writing key={`devto-${oWriting.id}`} oWriting={oWriting} />
-          ))}
+          {aWritings
+            .filter((writing) => writing.cover_image)
+            .map((oWriting, index) => (
+              <CustomVideo
+                key={`devto-${index}`}
+                oVideo={{
+                  sDesc: dayjs(oWriting.published_at).format("MMM D, YYYY"),
+                  sImg: oWriting.social_image,
+                  sLink: oWriting.url,
+                  sTitle: oWriting.title,
+                }}
+              />
+              // <Writing key={`devto-${oWriting.id}`} oWriting={oWriting} />
+            ))}
         </div>
       )}
     </div>

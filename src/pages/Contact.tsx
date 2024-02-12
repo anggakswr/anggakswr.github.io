@@ -43,7 +43,7 @@ const SocmedLink = ({ socmed }: { socmed: Socmed }) => {
   // local state
   const [isHover, setHover] = useState(false);
 
-  const bgRotate = isHover ? "-rotate-0" : "-rotate-6";
+  const bgRotate = isHover ? "-rotate-0" : "-rotate-3";
   const contentBg = socmed.bgColor === "bg-black" ? "border" : "";
   const contentRotate = isHover ? "rotate-0" : "rotate-3";
   const socmedLink =
