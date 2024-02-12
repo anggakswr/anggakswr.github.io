@@ -35,7 +35,7 @@ function App() {
         {/* <Cover /> */}
         <BoxTransition />
 
-        <div className="w-3/4 mx-auto py-8 flex gap-x-8">
+        <div className="md:w-3/4 px-4 md:px-0 mx-auto py-8 flex gap-x-8">
           <SidebarV2 />
 
           {/* body */}

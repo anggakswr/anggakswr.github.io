@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   TbBrandGithub,
   TbBrandInstagram,
@@ -24,57 +25,81 @@ const Contact = () => {
 
       <h2 className="text-xl mb-4">Find me on</h2>
 
-      {aSocials.map((oSocial) => (
-        <a
-          key={oSocial.sText}
-          href={oSocial.sLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`hover:opacity-80 inline-block py-2 px-4 shadow mr-4 mb-4 rounded-full text-white ${
-            oSocial.sCSSColor
-          } ${oSocial.sCSSColor === "bg-black" ? "border" : ""}`}
-        >
-          <span className="box-equal gap-x-2">
-            <span className="text-xl">{oSocial.sImg}</span>
-
-            <span className="text-xs md:text-sm">{oSocial.sText}</span>
-          </span>
-        </a>
+      {aSocials.map((socmed) => (
+        <SocmedLink key={socmed.text} socmed={socmed} />
       ))}
     </div>
   );
 };
 
+interface Socmed {
+  img: JSX.Element;
+  text: string;
+  link: string;
+  bgColor: string;
+}
+
+const SocmedLink = ({ socmed }: { socmed: Socmed }) => {
+  // local state
+  const [isHover, setHover] = useState(false);
+
+  const bgRotate = isHover ? "-rotate-0" : "-rotate-6";
+  const contentBg = socmed.bgColor === "bg-black" ? "border" : "";
+  const contentRotate = isHover ? "rotate-0" : "rotate-3";
+  const socmedLink =
+    "hover:rotate-0 inline-block mr-4 mb-4 text-white relative";
+
+  return (
+    <a
+      onMouseOver={() => setHover(true)}
+      onMouseOut={() => setHover(false)}
+      href={socmed.link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`${socmedLink}`}
+    >
+      <span className={`absolute inset-0 bg-white ${bgRotate}`} />
+
+      <span
+        className={`relative z-10 box-equal gap-x-2 py-2 px-4 ${contentBg} ${contentRotate} ${socmed.bgColor}`}
+      >
+        <span className="text-xl">{socmed.img}</span>
+        <span className="text-xs md:text-sm">{socmed.text}</span>
+      </span>
+    </a>
+  );
+};
+
 const aSocials = [
   {
-    sImg: <TbBrandGithub />,
-    sText: "Github",
-    sLink: "https://github.com/anggakswr/",
-    sCSSColor: "bg-black",
+    img: <TbBrandGithub />,
+    text: "Github",
+    link: "https://github.com/anggakswr/",
+    bgColor: "bg-black",
   },
   {
-    sImg: <TbBrandLinkedin />,
-    sText: "LinkedIn",
-    sLink: "https://www.linkedin.com/in/anggakswr/",
-    sCSSColor: "bg-blue-500",
+    img: <TbBrandLinkedin />,
+    text: "LinkedIn",
+    link: "https://www.linkedin.com/in/anggakswr/",
+    bgColor: "bg-blue-500",
   },
   {
-    sImg: <TbBrandInstagram />,
-    sText: "Instagram",
-    sLink: "https://www.instagram.com/anggakswr/",
-    sCSSColor: "bg-[#8134AF]",
+    img: <TbBrandInstagram />,
+    text: "Instagram",
+    link: "https://www.instagram.com/anggakswr/",
+    bgColor: "bg-[#8134AF]",
   },
   {
-    sImg: <TbBrandYoutube />,
-    sText: "Youtube",
-    sLink: "https://www.youtube.com/@anggakswr/",
-    sCSSColor: "bg-red-500",
+    img: <TbBrandYoutube />,
+    text: "Youtube",
+    link: "https://www.youtube.com/@anggakswr/",
+    bgColor: "bg-red-500",
   },
   {
-    sImg: <TbBrandTiktok />,
-    sText: "Tiktok",
-    sLink: "https://www.tiktok.com/@anggakswr",
-    sCSSColor: "bg-black",
+    img: <TbBrandTiktok />,
+    text: "Tiktok",
+    link: "https://www.tiktok.com/@anggakswr",
+    bgColor: "bg-black",
   },
 ];
 
