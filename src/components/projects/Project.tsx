@@ -27,7 +27,7 @@ const Project = ({ oProject }: { oProject: IProject }) => {
         {/* title */}
         <div className="box-equal gap-x-4 mb-4">
           <div className="w-12">
-            <img src={sLogo} alt={sName} />
+            <img src={sLogo} alt={sName} className="bg-white" />
           </div>
 
           <h2 className="text-xl text-black">{sName}</h2>
