@@ -7,6 +7,7 @@ import {
   TbBrandYoutube,
   TbDeviceLaptop,
   TbKeyboard,
+  TbTable,
 } from "react-icons/tb";
 
 const Contact = () => {
@@ -52,7 +53,13 @@ const gears = [
   {
     img: <TbKeyboard />,
     text: "Keyboard",
-    link: "https://github.com/anggakswr/",
+    link: "https://shope.ee/g2FCRn864",
+    bgColor: "bg-black",
+  },
+  {
+    img: <TbTable />,
+    text: "Stand Laptop",
+    link: "https://shope.ee/6zwq1b20jh",
     bgColor: "bg-black",
   },
 ];
