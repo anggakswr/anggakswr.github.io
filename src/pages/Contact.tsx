@@ -34,19 +34,20 @@ const Contact = () => {
 
       <hr className="my-4" />
 
+      <h2 className="text-xl mb-4">My coding classes</h2>
+
+      <div className="grid md:grid-cols-2 gap-4">
+        <img src="/img/contact/poster-kelas.jpg" alt="Poster Kelas" />
+        <img src="/img/contact/poster-kelas2.jpg" alt="Poster Kelas React" />
+      </div>
+
+      <hr className="my-4" />
+
       <h2 className="text-xl mb-4">My coding gears</h2>
 
       {gears.map((socmed) => (
         <SocmedLink key={socmed.text} socmed={socmed} />
       ))}
-
-      <hr className="my-4" />
-
-      <h2 className="text-xl mb-4">My coding classes</h2>
-
-      <div className="grid md:grid-cols-2 gap-4">
-        <img src="/img/contact/poster-kelas.jpg" alt="Poster Kelas" />
-      </div>
     </div>
   );
 };
