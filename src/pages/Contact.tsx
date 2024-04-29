@@ -39,6 +39,14 @@ const Contact = () => {
       {gears.map((socmed) => (
         <SocmedLink key={socmed.text} socmed={socmed} />
       ))}
+
+      <hr className="my-4" />
+
+      <h2 className="text-xl mb-4">My coding classes</h2>
+
+      <div className="grid md:grid-cols-2 gap-4">
+        <img src="/img/contact/poster-kelas.jpg" alt="Poster Kelas" />
+      </div>
     </div>
   );
 };
@@ -46,18 +54,21 @@ const Contact = () => {
 const gears = [
   {
     img: <TbDeviceLaptop />,
+    img2: "/img/contact/laptop.jpeg",
     text: "Laptop",
     link: "https://shope.ee/7f8iZwQreF",
     bgColor: "bg-black",
   },
   {
     img: <TbKeyboard />,
+    img2: "/img/contact/keyboard.jpeg",
     text: "Keyboard",
     link: "https://shope.ee/g2FCRn864",
     bgColor: "bg-black",
   },
   {
     img: <TbTable />,
+    img2: "/img/contact/stand.jpg",
     text: "Stand Laptop",
     link: "https://shope.ee/6zwq1b20jh",
     bgColor: "bg-black",
@@ -66,6 +77,7 @@ const gears = [
 
 interface Socmed {
   img: JSX.Element;
+  img2?: string;
   text: string;
   link: string;
   bgColor: string;
@@ -90,6 +102,14 @@ const SocmedLink = ({ socmed }: { socmed: Socmed }) => {
       rel="noopener noreferrer"
       className={`${socmedLink}`}
     >
+      {socmed.img2 ? (
+        <img
+          src={socmed.img2}
+          alt={socmed.text}
+          className="relative z-10 w-full md:w-40"
+        />
+      ) : null}
+
       <span className={`absolute inset-0 bg-white ${bgRotate}`} />
 
       <span
