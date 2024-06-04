@@ -9,6 +9,7 @@ import {
   TbKeyboard,
   TbTable,
 } from "react-icons/tb";
+import SourceCodes from "../components/contact/SourceCodes";
 
 const Contact = () => {
   return (
@@ -48,6 +49,12 @@ const Contact = () => {
       {gears.map((socmed) => (
         <SocmedLink key={socmed.text} socmed={socmed} />
       ))}
+
+      <hr className="my-4" />
+
+      <h2 className="text-xl mb-4">My source codes</h2>
+
+      <SourceCodes />
     </div>
   );
 };

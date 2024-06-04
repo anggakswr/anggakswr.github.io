@@ -1,7 +1,7 @@
 import { BiUpArrowAlt } from "react-icons/bi";
 
 interface IProject {
-  sBorder: string;
+  sBorder?: string;
   sName: string;
   sLogo: string;
   sDesc: string;
