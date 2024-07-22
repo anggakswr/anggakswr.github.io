@@ -15,7 +15,7 @@ const Experiences = () => {
         </p>
 
         <a
-          href="/docs/cv-angga-ats.pdf"
+          href="/docs/cv-angga-ats-eng.pdf"
           className="text-lg box-equal gap-x-2 bg-white text-black py-2 px-4 rotate-3 hover:-rotate-3"
           download
         >
