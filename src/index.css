@@ -12,10 +12,6 @@
   font-family: "p5hatty", "Georgia", serif;
 }
 
-img {
-  @apply bg-gray-500;
-}
-
 .box-center {
   @apply flex items-center justify-center;
 }
