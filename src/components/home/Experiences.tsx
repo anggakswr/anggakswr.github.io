@@ -37,8 +37,18 @@ const Experiences = () => {
 
 const aOffices = [
   {
+    sTitle: "Software Engineer",
+    sTimeline: "Apr 2025 - Present",
+    oCompany: {
+      sLogo: "maze-logo.png",
+      sName: "Mazecare",
+      sLink: "https://mazecare.com",
+      sCity: "Hongkong",
+    },
+  },
+  {
     sTitle: "Frontend Developer",
-    sTimeline: "Jul 2022 - Present",
+    sTimeline: "Jul 2022 - Jun 2025",
     oCompany: {
       sLogo: "prima-logo.png",
       sName: "Primaku",
@@ -54,16 +64,6 @@ const aOffices = [
       sName: "Gamatechno",
       sLink: "https://www.gamatechno.com",
       sCity: "Yogyakarta",
-    },
-  },
-  {
-    sTitle: "Fullstack Developer",
-    sTimeline: "Januari 2021 - Desember 2022",
-    oCompany: {
-      sLogo: "untag-logo.png",
-      sName: "UNTAG",
-      sLink: "https://untagsmg.ac.id",
-      sCity: "Semarang",
     },
   },
   {
