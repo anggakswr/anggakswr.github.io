@@ -32,7 +32,7 @@ const Office = ({ oOffice }: { oOffice: IOffice }) => {
 
           {/* texts */}
           <div className="flex-1">
-            <p className="font-bold">{sTitle}</p>
+            <p>{sTitle}</p>
 
             <div className="box-equal gap-x-2 text-gray-600">
               <a
